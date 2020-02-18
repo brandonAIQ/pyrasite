@@ -33,8 +33,7 @@ def shell():
         print(usage)
         sys.exit(1)
 
-    ipc = pyrasite.PyrasiteIPC(pid, 'ReversePythonShell',
-                               timeout=os.getenv('PYRASITE_IPC_TIMEOUT') or 5)
+    ipc = pyrasite.PyrasiteIPC(pid, 'ReversePythonShell', timeout=30)
     ipc.connect()
 
     print("Pyrasite Shell %s" % pyrasite.__version__)
